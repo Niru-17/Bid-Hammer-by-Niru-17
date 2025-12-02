@@ -1,0 +1,41 @@
+
+hammer_art = '''
+       _______
+     _|       |_
+    | |       | |
+    | |_______| |
+    |  _______  |
+    | |       | |
+    | |       | |
+    |_|_______|_|
+      |     |
+      |     |
+      |_____|
+     /_____\\
+'''
+print(hammer_art)
+Initial_Bidding = {}
+def winner():
+    final_winner = ""
+    highest_bid = 0
+    for bidder in Initial_Bidding:
+        bid_amount = Initial_Bidding[bidder]
+        if bid_amount > highest_bid:
+            highest_bid = bid_amount 
+            final_winner = bidder
+
+    print(f"Winner is {bidder} with {highest_bid}")
+
+Should_continue = True
+while Should_continue:
+    
+    Name = input("Can I have your name?:\n")
+    Bidding_Price = int(input("What's Your Bidding?:\n"))
+    Initial_Bidding[Name] = Bidding_Price
+    Continue = input("Anyone would Like to Joine?:")
+    if Continue == "no":
+        Should_continue = False
+        winner()
+    else:
+        print("\n" * 20)
+    
